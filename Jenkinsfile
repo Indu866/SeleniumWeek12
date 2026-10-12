@@ -6,7 +6,7 @@ pipeline {
             steps{
                 echo "Running selenium tests using pytest"
 
-                sh "pip install -r requirements.txt"
+                sh "pip3 install -r requirements.txt"
 
                 sh "start /B python app.py"
 
