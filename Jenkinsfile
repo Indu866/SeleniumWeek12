@@ -12,7 +12,7 @@ pipeline {
 
                 sh "sleep 5"
 
-                sh "pytest -v"
+                sh "python3 -m pytest -v"
             }
         }
         stage('Build Docker Image') {
