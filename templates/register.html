@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <form action="/register" method="POST" onsubmit="return validateForm()">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+
+        <label for="">Password</label>
+       
+        <input type="password" name="pw" id="pw">
+
+        <button type="submit" name="sb">register</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const pw = document.getElementById('pw').value.trim();
+
+            if (name === "") {
+                alert("username can't be empty.");
+                return false; 
+            }
+
+            if (pw === "") {
+                alert("password can't be empty.");
+                return false; 
+            }
+
+            if(pw.length < 6){
+                alert("password must be atleast 6 characters long");
+                return false;
+            }
+            return true; 
+        }
+    </script>
+</body>
+</html>
