@@ -6,6 +6,14 @@ from selenium.webdriver.common.alert import Alert
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
+@pytest.fixture
+def setup_teardown():
+    driver = webdriver.Chrome(
+        service=Service(ChromeDriverManager().install())
+    )
+    yield driver
+    driver.quit()
+    
 def get_alert_text(driver):
     alert = Alert(driver)
     text = alert.text
