@@ -8,7 +8,7 @@ pipeline {
 
                 sh "pip3 install -r requirements.txt"
 
-                sh "start /B python app.py"
+                sh "start /B python3 app.py"
 
                 sh "ping 127.0.0.1 -n 5 > nul"
 
